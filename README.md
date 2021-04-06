@@ -90,11 +90,10 @@ To make sure that one algorithms has a consistent performance and it performs be
 
 **Backpropagation Result:**
 For 30 runs of Backpropagation algorithm I got around 65.38 mean accuracy with standard deviation of 2.40. As you can see Backpropagation performs well compared to SVM but it has huge fluctuation in accuracy so that might cause issue when I want steady accuracy.
-![BackPropagation Run](Images/Backpropagation%20Run.jpeg)
 
 T-0.95(58) = +- 1.701
 
-T test value for 95% accuracy for 30 epoch run was in range of +-1.701 (If the value for each pair is under that range that means chances of getting improvement is 0.05% with those pair algorithms). As you can see backpropagation and SVM implementation T result falls under that range I can say that chances of getting better result from backpropagation compare to SVM is very less as there is big variations for each run in backpropagation.
+T test value for 95% accuracy for 30 epoch run was in range of +-1.701 (If the value for each pair is under that range that means chances of getting improvement is 0.05% with those pair algorithms). T result falls under that range I can say that chances of getting better result from backpropagation compare to SVM is very less as there is big variations for each run in backpropagation.
 
 ## Conclusion:
 
