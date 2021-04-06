@@ -7,7 +7,7 @@ Our approach to for this project consist of major steps:
 
 1. Dataset creation
 2. Implementation of algorithm
-3. Comparison of result and analysis
+3. Result and analysis
 
 ## 1.	Dataset creation :
 For data collection I used yahoo finance. Yahoo Finance is a database with stock prices for various companies. Most of the companies I chose were in the sector of technology. Ex. Apple, Google, Yahoo, Microsoft etc. I collected data from January 2010 to December 2016. The stock market took a toll during 2007-2008 financial crisis. This time around, companies went in loss and stock data of companies completely unpredictable. Training our model using this data would cause our model to be less accurate because of a lack of trend during the crisis period. So I avoided data that can result into uncertain behavior
