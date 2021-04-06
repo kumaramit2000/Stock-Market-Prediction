@@ -83,48 +83,19 @@ Data set consisted of these 6 dimensions for each of the stocks. I.E. each day h
 
 ## 2. Algorithms :
 
-
-### a)	SVM:
-SVM (Support vector machine) is one popular algorithm used for many classification problems. It is one of the supervised learning models with associated learning algorithms that analyze data used for classification and regression analysis. Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier. An SVM model is a representation of the examples as points in space, mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible. New examples are then mapped into that same space and predicted to belong to a category based on which side of the gap they fall.
-In addition to performing linear classification, SVMs can efficiently perform a non-linear classification using what is called the kernel trick, implicitly mapping their inputs into high-dimensional feature spaces. As for given problem our data was not linear separable so I implemented a “RBF” kernel which gives better result for nonlinear kernel.
-For our problem I implemented SVM using Scikit Learn (sklearn) Library. Using python code, I import library, first I try to for SVM on train dataset and then I try to predict values on that machine for test dataset.
-
-### b) Back Propagation:
+### a) Back Propagation:
 Back Propagation Algorithm can be used for both Classification and Regression problem. Here, Stock Price Prediction is a Classification problem. I have Implemented Back Propagation algorithm for stock price prediction using Numpy and Pandas lib. Back propagation, an abbreviation for "backward propagation of errors", is a common supervised learning method of training artificial neural networks used in conjunction with an optimization method such as gradient descent. The gradient descent method calculates the gradient of a loss function with respect to all the weights in the 	network. Back propagation calculates the gradient of the error of the network regarding the network's modifiable weights. This gradient is used in a simple stochastic gradient descent algorithm to find weights that minimize the error.
 
 Back Propagation is a multilayer feed forward network. A Multilayer feedforward neural network is a network that consists of input layer, one or more than one hidden layer and one output layer. A neural network that has no hidden layer is called 	a Perceptron. In Back Propagation the input layer is connected to the hidden layer by interconnection weights and hidden layer is connected to the output layer by interconnection weights. The increase in number of layers results in the computational complexity of the neural network. As a result, the time taken for convergence and to minimize the error may be very high
 
-### c)	LSTM:
-LSTM stands for Long Short Term memory. It is building block of a neural network (like perceptron). LSTM blocks are used to build a recurrent neural network. An RNN is a type of neural network where the output of a block is fed as input to the next iteration. An LSTM block is composed of four main components: a cell, an 	input gate, an output gate and a forget gate. The cell is responsible for "remembering" values over arbitrary time intervals; hence the word "memory" in LSTM. Each of the three gates can be thought of as a "conventional" artificial neuron, as in a multi-layer (or feedforward) neural network: that is, they compute an activation (using an activation function) of a weighted sum. Intuitively, they can be thought as regulators of the flow of values that goes through the connections of the LSTM; hence the denotation "gate". There are connections between these gates and the cell. Some of the connections are recurrent, some of them are not.
 
-As mentioned earlier stock prediction is a time series problem. LSTM can 	be used for time series predictions. LSTM don’t have the vanishing gradient problem which a traditional RNN has.
-
-## 3.	Comparison of result and analysis :
+## 3. Result and analysis :
 
 To make sure that one algorithms has a consistent performance and it performs better than other I tried to run same algorithm multiple times. Each algorithm was implemented 30 times and for each time prediction accuracy is calculated on test data. For each run different training and testing dataset is used. Find below accuracy results for each algorithm.
-
-**SVM Result:**
-For 30 runs of SVM algorithm I got around 65.20 mean accuracy with 0.15 standard deviation. This shows that SVM performance is consistent for 30 runs this is due to nurture of SVM algorithm. Algorithm will train keep training until it can classify max testing data. This result into almost same network at the and resulting same close accuracy values on test data.
-
-![SVM Run](Images/SVM%20Run.jpg)
 
 **Backpropagation Result:**
 For 30 runs of Backpropagation algorithm I got around 65.38 mean accuracy with standard deviation of 2.40. As you can see Backpropagation performs well compared to SVM but it has huge fluctuation in accuracy so that might cause issue when I want steady accuracy.
 ![BackPropagation Run](Images/Backpropagation%20Run.jpeg)
-
-**LSTM Result:**
-For 30 runs of LSTM algorithm I got around 66.83 mean accuracy with standard deviation of 1.36. As you can see LSTM performs well compared to SVM and Backpropagation also there in no huge fluctuation in accuracy so this is an overall performance improvement compared to other algorithms.
-
-![LSTM Run](Images/LSTM_Run.jpg)
-
-
-T Test Result:
-![T Test Result](Images/T_Test.jpg)
-
-
-After getting accuracy for each algorithm, I wanted to compare each algorithm 	to check which one performs better than other I implemented T test result for this.
-![T Test Result Comparison](Images/T_Test_Comparison.jpg)
-
 
 T-0.95(58) = +- 1.701
 
@@ -132,11 +103,4 @@ T test value for 95% accuracy for 30 epoch run was in range of +-1.701 (If the v
 
 ## Conclusion:
 
-In this project, I have demonstrated a machine learning approach to predict stock market trend using different neural networks. Result shows how I can use history data to predict stock movement with reasonable accuracy. Also, with T test result analysis I can conclude that LSTM performs better compare to Backpropagation and SVM. For this implementation, I would like to conclude that if I incorporate all the factors that affect stock performance and feed them to neural network with proper data preprocessing and filtering, after training the network I will be able to have a model which can predict stock momentum very accurately and this can result into better stock forecasting and profit for financial firms.
-
-## Reference
-**[Reference paper](https://www.cs.princeton.edu/sites/default/files/uploads/saahil_madge.pdf)
-**[BackPropogtion Algorithm Reference](https://machinelearningmastery.com/implement-backpropagation-algorithm-scratch-python/)
-**[LSTM Algorithm Reference](https://machinelearningmastery.com/time-series-prediction-lstm-recurrent-neural-networks-python-keras/)
-**[SVM SciKit Learn](http://scikit-learn.org/stable/modules/svm.html)
-
+In this project, I have demonstrated a machine learning approach to predict stock market trend using different neural networks. Result shows how I can use history data to predict stock movement with reasonable accuracy. For this implementation, I would like to conclude that if I incorporate all the factors that affect stock performance and feed them to neural network with proper data preprocessing and filtering, after training the network I will be able to have a model which can predict stock momentum very accurately and this can result into better stock forecasting and profit for financial firms.
