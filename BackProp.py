@@ -1,10 +1,10 @@
-#Program for backpropogation algorithm 
+# Program for backpropogation for  6 class Dermatology dataset
 from math import exp
 from random import random
 from csv import reader
 import numpy as np
 import time
-print('program execution start')
+print('Program Execution Start...')
 # Read datasets from CSV input file
 def Read_file(file_name):
     dataset = list()
@@ -38,13 +38,13 @@ def normalize_dataset(dataset, minmax):
     for row in dataset:
         for i in range(len(row) - 1):
             row[i] = (row[i] - minmax[i][0]) / (minmax[i][1] - minmax[i][0])
-# testdataset
+# Test Data Set
 testdataset= Read_file('Input_Dataset.csv')
 for i in range(len(testdataset[0]) - 1):
     str_column_to_int(testdataset, i)
-# # convert last column to integers
+# Convert last column to integers
 str_column_to_int(testdataset, len(testdataset[0]) - 1)
-#normalize dataset to get better result
+# Normalize dataset to get better result
 minmax = dataset_minmax(testdataset)
 normalize_dataset(testdataset, minmax)
 # Initialize a network
@@ -133,11 +133,9 @@ learning_rate = 0.5
 n_epoch = 30
 w = 0
 r = 1
-print('Backprop aglo')
+print('Backpropagation Algorithm -')
 runs = [0]*30
 for i in range(len(runs)):
-    # # learning_rate = learning_rate + 0.05
-    # # n_epoch = n_epoch + 4
     r =  r + 1000
     if (r + 10000) > 15800:
         r = w
